@@ -40,7 +40,7 @@ router.post('/transcribe', upload.single('audio'), async (req, res) => {
             language: "nl", // Specify the language code
             prompt: "Maak een transcriptie van deze audio, dewelke een dictaat is dat medische termen bevat.",
             file: fs.createReadStream(audioFilePath),
-            model: "whisper-1", // Use the correct model name
+            model: "gpt-4o-transcribe", // Use the correct model name
         });
         console.log(transcription); // Debugging: Check the transcription result
          // Save the transcription result to a text file

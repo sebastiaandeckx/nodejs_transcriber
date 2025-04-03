@@ -32,7 +32,7 @@ router.post('/transcribe', upload.single('audio'), async (req, res) => {
 
         // Rename the uploaded file to ensure it has the correct .ogg extension
         const originalFilePath = path.join(__dirname, '../..', req.file.path);
-        const audioFilePath = path.join(transcriptionsFolder, `${uniqueId}.ogg`);
+        const audioFilePath = path.join(transcriptionsFolder, `${uniqueId}.webm`);
         fs.renameSync(originalFilePath, audioFilePath);
 
         // Use OpenAI's transcription API

@@ -11,7 +11,7 @@ let uniqueId = '';
 
 recordButton.addEventListener('click', async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/ogg' }); // Record in OGG format
+    mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm;codecs=opus' }); // Record in OGG format
 
     mediaRecorder.start();
     recordButton.disabled = true;
@@ -28,10 +28,10 @@ stopButton.addEventListener('click', () => {
     stopButton.disabled = true;
 
     mediaRecorder.addEventListener('stop', async () => {
-        const audioBlob = new Blob(audioChunks, { type: 'audio/ogg' });
+        const audioBlob = new Blob(audioChunks, { type: 'audio/webm;codecs=opus' });
         audioChunks = [];
         // Create a File object with a proper filename and extension
-        const audioFile = new File([audioBlob], 'recording.ogg', { type: 'audio/ogg' });
+        const audioFile = new File([audioBlob], 'recording.webm', { type: 'audio/webm;codecs=opus' });
 
         const formData = new FormData();
         formData.append('audio', audioFile); // Append the File object

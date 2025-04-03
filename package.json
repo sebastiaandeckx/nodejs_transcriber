@@ -1,14 +1,24 @@
 {
-  "name": "nodejs-app",
+  "name": "audio-transcription-app",
   "version": "1.0.0",
-  "description": "A minimal Node.js web application.",
+  "description": "A simple Node.js application for recording audio and transcribing it using OpenAI Whisper API.",
   "main": "app.js",
-  "author": "alphasec",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.19.2"
-  },
   "scripts": {
-    "start": "node app.js"
-  }
+    "start": "node src/app.js",
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^1.4.2",
+    "openai": "^4.91.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "license": "MIT"
 }

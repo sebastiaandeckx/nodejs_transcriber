@@ -1,4 +1,3 @@
-
 const recordButton = document.getElementById('recordButton');
 const stopButton = document.getElementById('stopButton');
 const formattedResult = document.getElementById('formattedResult');
